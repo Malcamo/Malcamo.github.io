@@ -104,6 +104,48 @@
         <figure id="Location3"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
     </section>
 
+    <h2>
+        Week 2 Charts
+    </h2>
+
+    <section>
+        <div class="chart-description">
+            <h3>US GDP Over Time</h3>
+            <p> 
+                Dim drums throbbing, in the hills half heard,
+                Where only on a nameless throne a crownless prince has stirred,
+                Where, risen from a doubtful seat and half attainted stall,
+                The last knight of Europe takes weapons from the wall,
+                The last and lingering troubadour to whom the bird has sung,
+                That once went singing southward when all the world was young,
+                In that enormous silence, tiny and unafraid,
+                Comes up along a winding road the noise of the Crusade.               
+            </p>
+        </div>
+        <figure id="Location4"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+
+    <section>
+        <div class="chart-description">
+            <h3>Ukraine Grain Imports by Year</h3>
+            <p> 
+                Strong gongs groaning as the guns boom far,
+                Don John of Austria is going to the war,
+                Stiff flags straining in the night-blasts cold
+                In the gloom black-purple, in the glint old-gold,
+                Torchlight crimson on the copper kettle-drums,
+                Then the tuckets, then the trumpets, then the cannon, and he comes.
+                Don John laughing in the brave beard curled,
+                Spurning of his stirrups like the thrones of all the world,
+                Holding his head up for a flag of all the free.
+                Love-light of Spain—hurrah!
+                Death-light of Africa!
+                Don John of Austria
+                Is riding to the sea.               
+            </p>
+        </div>
+        <figure id="Location5"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
 
     <!-- This is a script, it's a way to run JavaScript code on the page -->
     <script>
@@ -143,6 +185,19 @@
 
     </script>
 
+    <script>
+
+        let figure_4_spec = "wk2_USGDP.json";
+        vegaEmbed('#Location4', figure_4_spec) 
+
+    </script>
+
+    <script>
+
+        let figure_5_spec = "wk2_UkrGrain.json";
+        vegaEmbed('#Location5', figure_5_spec) 
+
+    </script>
 
 </body>
     
