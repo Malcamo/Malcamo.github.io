@@ -47,7 +47,7 @@
         "axis": {
           "title": "Billions of Dollars",
           "titleColor": "#122B39",
-          "grid": false
+          "grid": true
         }
       }
     }
