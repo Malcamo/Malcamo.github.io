@@ -1,0 +1,16 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Malcamo/Malcamo.github.io/refs/heads/main/uk%20labor%20stats%20example.csv"
+  },
+  "title": {
+    "text": "UK Productivity 1960-2023",
+    "subtitle": "Output per Worker: Whole Economy seasonally adjusted: Index 2019=100"
+  },
+  "mark": {"type": "line", "color": "blue"},
+  "encoding": {
+    "x": {"field": "date", "type": "temporal"},
+    "y": {"field": "value", "type": "quantitative"}
+  },
+  "config": {}
+}
