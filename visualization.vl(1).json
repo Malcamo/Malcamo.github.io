@@ -16,11 +16,10 @@
   "mark": {"type": "line", "point": true},
   "encoding": {
     "x": {"field": "Year", "type": "temporal", "title": null},
-    "y": {"field": "Value", "type": "quantitative", "title": "LCOE  ($/MWh)"},
+    "y": {"field": "Value", "type": "quantitative", "title": ["LCOE","($/MWh)"], "axis":{"titleAngle":0, "titlePadding":20}},
     "color": {
       "field": "Scenario",
       "scale": {"range": ["green", "blue", "orange"]}
     }
-  },
-  "config": {}
+  }
 }
