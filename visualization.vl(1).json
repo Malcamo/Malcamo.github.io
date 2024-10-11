@@ -1,0 +1,26 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {"text": "Land-Based Wind", "subtitle": ["Mature", "Market"]},
+  "data": {
+    "url": "https://raw.githubusercontent.com/Malcamo/Malcamo.github.io/refs/heads/main/LandBasedWindChartRecreation.csv"
+  },
+  "view": {"fill": "#ffffff", "strokeOpacity": 1},
+  "transform": [
+    {
+      "fold": ["Advanced", "Moderate", "Conservative"],
+      "as": ["Scenario", "Value"]
+    }
+  ],
+  "width": 300,
+  "background": "aliceblue",
+  "mark": {"type": "line", "point": true},
+  "encoding": {
+    "x": {"field": "Year", "type": "temporal", "title": null},
+    "y": {"field": "Value", "type": "quantitative", "title": "LCOE  ($/MWh)"},
+    "color": {
+      "field": "Scenario",
+      "scale": {"range": ["green", "blue", "orange"]}
+    }
+  },
+  "config": {}
+}
