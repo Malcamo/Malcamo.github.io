@@ -167,6 +167,36 @@
         </div>
         <figure id="Location6"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
     </section>
+    
+    <section>
+        <div class="chart-description">
+            <h3>LCOE of Land-Based Wind</h3>
+            <p> 
+               Here is the original chart I attempted to recreate              
+            </p>
+        </div>
+        <img src=LCOELBWExample.png alt="NREL Original Chart> 
+    </section>
+            
+    <section>
+        <div class="chart-description">
+            <h3>LCOE of Land-Based Wind Recreation</h3>
+            <p> 
+               Here is my attempted recreation of the above chart            
+            </p>
+        </div>
+        <figure id="Location7"></figure> 
+    </section>
+
+    <section>
+        <div class="chart-description">
+            <h3>LCOE of Land-Based Wind Improvements</h3>
+            <p> 
+               I have changed the backgrounds and colors to create a more unified color scheme, and edited the titles and labels for clarity.            
+            </p>
+        </div>
+        <figure id="Location8"></figure> 
+    </section>
 
     <!-- This is a script, it's a way to run JavaScript code on the page -->
     <script>
@@ -227,6 +257,20 @@
 
     </script>
 
+    <script>
+
+        let figure_7_spec = "LCOELBWRecreation.json";
+        vegaEmbed('#Location7', figure_7_spec) 
+
+    </script>
+    
+    <script>
+
+        let figure_8_spec = "LCOELBWImprovement.json";
+        vegaEmbed('#Location8', figure_8_spec) 
+
+    </script>
+    
 </body>
     
 </html>
