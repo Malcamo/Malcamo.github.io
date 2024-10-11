@@ -1,0 +1,46 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Projected Cost of Onshore Wind",
+    "subtitle": [
+      "LCOE of Land-Based Wind, $/MWh",
+      "Source: NREL Annual Technology Baseline 2024"
+    ],
+    "color": "purple"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/Malcamo/Malcamo.github.io/refs/heads/main/LandBasedWindChartRecreation.csv"
+  },
+  "view": {"fill": "white", "strokeOpacity": 0},
+  "transform": [
+    {
+      "fold": ["Advanced", "Moderate", "Conservative"],
+      "as": ["Scenario", "Value"]
+    }
+  ],
+  "width": 300,
+  "background": "#d2ffd2",
+  "mark": {"type": "line", "point": true},
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "temporal",
+      "title": null,
+      "axis": {"grid": false}
+    },
+    "y": {"field": "Value", "type": "quantitative", "title": null},
+    "color": {
+      "field": "Scenario",
+      "sort": ["Advanced", "Moderate", "Conservative"],
+      "scale": {"range": ["darkgreen", "teal", "darkblue"]}
+    }
+  },
+  "config": {
+    "legend": {
+      "fillColor": "#ffffff",
+      "strokeColor": "black",
+      "padding": 5,
+      "symbolType": "stroke"
+    }
+  }
+}
