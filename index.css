@@ -69,12 +69,12 @@ button {
   background-color: #e7e7e7; color: black;} /* Gray */
   border: 2px solid #04AA6D;
   color: white;
-  padding: 15px 32px;
+  padding: 20px 40px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-transition-duration: 0.4s;
+  transition-duration: 0.4s;
 }
 button:hover {
   background-color: #04AA6D; /* Green */
