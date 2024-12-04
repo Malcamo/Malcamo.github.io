@@ -66,7 +66,7 @@ img {
   height: auto;
 }
 button {
-  background-color: #e7e7e7; color: black;} /* Gray */
+  background-color: #e7e7e7; color: black; /* Gray */
   border: 2px solid #04AA6D;
   color: white;
   padding: 20px 40px;
