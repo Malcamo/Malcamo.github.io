@@ -6,122 +6,63 @@
       "LCOE of Nuclear, $/MWh",
       "Source: NREL Annual Technology Baseline 2024"
     ],
+    "anchor": "middle",
     "color": "purple"
   },
   "data": {
     "url": "https://raw.githubusercontent.com/Malcamo/Malcamo.github.io/refs/heads/main/Nuclear_LCOE_Cleaned.csv"
   },
   "background": "#d2ffd2",
-  "hconcat": [
-    {
-      "view": {"fill": "white", "strokeOpacity": 0},
-      "width": 300,
-      "encoding": {
-        "x": {"field": "Year", "type": "temporal", "title": null},
-        "y": {"field": "LCOE", "type": "quantitative", "title": null},
-        "color": {
-          "scale": {"range": ["darkgreen", "teal", "darkblue"]},
-          "condition": {
-            "param": "hover",
-            "field": "Scenario",
-            "type": "nominal",
-            "legend": null
-          },
-          "value": "grey"
-        },
-        "opacity": {"condition": {"param": "hover", "value": 1}, "value": 0.2}
+  "facet":{"column": {"field":"Cleaned Reactor Size"}},
+  "spec": {"view": {"fill": "white", "strokeOpacity": 0},
+  "width": 300,
+  
+  "encoding": {
+    "x": {"field": "Year", "type": "temporal", "title": null},
+    "y": {"field": "LCOE", "type": "quantitative", "title": null},
+    "color": {
+      "scale": {"range": ["darkgreen", "teal", "darkblue"]},
+      "condition": {
+        "param": "hover",
+        "field":"Scenario",
+        "type":"nominal",
+        "legend": null
       },
-      "layer": [
-        {
-          "params": [
-            {
-              "name": "hover",
-              "value": [{"Scenario": "Advanced"}],
-              "select": {
-                "type": "point",
-                "fields": ["Scenario"],
-                "on": "pointerover"
-              }
-            }
-          ],
-          "mark": {
-            "type": "line",
-            "strokeWidth": 8,
-            "stroke": "transparent",
-            "point": true
-          }
-        },
-        {"mark": "line"},
-        {
-          "encoding": {
-            "x": {"aggregate": "max", "field": "Year"},
-            "y": {"aggregate": {"argmax": "LCOE"}, "field": "price"}
-          },
-          "layer": [
-            {"mark": {"type": "circle"}},
-            {
-              "mark": {"type": "text", "align": "left", "dx": 4},
-              "encoding": {"text": {"field": "Scenario", "type": "nominal"}}
-            }
-          ]
-        }
-      ]
+      "value": "grey"
     },
-    {
-      "view": {"fill": "white", "strokeOpacity": 0},
-      "width": 300,
-      "encoding": {
-        "x": {"field": "Year", "type": "temporal", "title": null},
-        "y": {"field": "LCOE", "type": "quantitative", "title": null},
-        "color": {
-          "scale": {"range": ["darkgreen", "teal", "darkblue"]},
-          "condition": {
-            "param": "hover",
-            "field": "Scenario",
-            "type": "nominal",
-            "legend": null
-          },
-          "value": "grey"
-        },
-        "opacity": {"condition": {"param": "hover", "value": 1}, "value": 0.2}
+    "opacity": {
+      "condition": {
+        "param": "hover",
+        "value": 1
       },
-      "layer": [
-        {
-          "params": [
-            {
-              "name": "hover",
-              "value": [{"Scenario": "Advanced"}],
-              "select": {
-                "type": "point",
-                "fields": ["Scenario"],
-                "on": "pointerover"
-              }
-            }
-          ],
-          "mark": {
-            "type": "line",
-            "strokeWidth": 8,
-            "stroke": "transparent",
-            "point": true
-          }
-        },
-        {"mark": "line"},
-        {
-          "encoding": {
-            "x": {"aggregate": "max", "field": "Year"},
-            "y": {"aggregate": {"argmax": "LCOE"}, "field": "price"}
-          },
-          "layer": [
-            {"mark": {"type": "circle"}},
-            {
-              "mark": {"type": "text", "align": "left", "dx": 4},
-              "encoding": {"text": {"field": "Scenario", "type": "nominal"}}
-            }
-          ]
-        }
-      ]
+      "value": 0.2
     }
-  ],
+  },
+  "layer": [{
+    "params": [{
+      "name": "hover",
+      "value": [{"Scenario": "Advanced"}],
+      "select": {
+        "type": "point",
+        "fields": ["Scenario"],
+        "on": "pointerover"
+      }
+    }],
+    "mark": {"type": "line", "strokeWidth": 8, "stroke": "transparent", "point": true, "tooltip":true}
+  }, {
+    "mark": "line"
+  }, {
+    "encoding": {
+      "x": {"aggregate": "max", "field": "Year"},
+      "y": {"aggregate": {"argmax": "LCOE"}, "field": "price"}
+    },
+    "layer": [{
+      "mark": {"type": "circle"}
+    }, {
+      "mark": {"type": "text", "align": "left", "dx": 4},
+      "encoding": {"text": {"field":"Scenario", "type": "nominal"}}
+    }]
+  }],
   "config": {
     "legend": {
       "fillColor": "#ffffff",
@@ -130,4 +71,4 @@
       "symbolType": "stroke"
     }
   }
-}
+}}
