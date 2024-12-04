@@ -1,0 +1,83 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A bar chart with negative values. We can hide the axis domain line, and instead use a conditional grid color to draw a zero baseline.",
+  "title": "Raw Pay Gaps by Ethnicity, 2022",
+  "width": "300",
+  "height": "500",
+  "data": {
+    "values": [
+      {
+        "Ethnicity": "Mixed or Multiple ethnic groups: White and Black Caribbean",
+        "PayGap": -18.5
+      },
+      {"Ethnicity": "Asian or Asian British: Bangladeshi", "PayGap": -17.5},
+      {"Ethnicity": "Asian or Asian British: Pakistani", "PayGap": -13.3},
+      {
+        "Ethnicity": "Black, African, Caribbean or Black British: Other Black",
+        "PayGap": -13.3
+      },
+      {"Ethnicity": "Asian or Asian British: Other Asian", "PayGap": -7.7},
+      {
+        "Ethnicity": "Black, African, Caribbean or Black British: African",
+        "PayGap": -7.3
+      },
+      {
+        "Ethnicity": "Mixed or Multiple ethnic groups: White and Black African",
+        "PayGap": -1.8
+      },
+      {
+        "Ethnicity": "Black, African, Caribbean or Black British: Caribbean",
+        "PayGap": -1.7
+      },
+      {"Ethnicity": "White: Other White", "PayGap": 0.6},
+      {"Ethnicity": "Other ethnic group: Any other ethnic group", "PayGap": 4},
+      {"Ethnicity": "Other ethnic group: Arab", "PayGap": 4.3},
+      {
+        "Ethnicity": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
+        "PayGap": 14.4
+      },
+      {
+        "Ethnicity": "Mixed or Multiple ethnic groups: White and Asian",
+        "PayGap": 17.4
+      },
+      {"Ethnicity": "Asian or Asian British: Indian", "PayGap": 19.9},
+      {"Ethnicity": "Asian or Asian British: Chinese", "PayGap": 23},
+      {"Ethnicity": "White: Irish", "PayGap": 40.1}
+    ]
+  },
+  "encoding": {
+    "y": {
+      "field": "Ethnicity",
+      "type": "nominal",
+      "axis": {
+        "domain": false,
+        "ticks": false,
+        "labelAngle": 0,
+        "labelPadding": 4
+      }
+    },
+    "x": {
+      "field": "PayGap",
+      "type": "quantitative",
+      "scale": {"padding": 20},
+      "axis": {
+        "gridColor": {
+          "condition": {"test": "datum.value === 0", "value": "black"},
+          "value": "#ddd"
+        }
+      }
+    }
+  },
+  "layer": [
+    {"mark": "bar"},
+    {
+      "mark": {
+        "type": "text",
+        "align": {"expr": "datum.PayGap < 0 ? 'right' : 'left'"},
+        "dx": {"expr": "datum.PayGap < 0 ? -2 : 2"}
+      },
+      "encoding": {"text": {"field": "PayGap", "type": "quantitative"}}
+    }
+  ],
+  "config": {}
+}
