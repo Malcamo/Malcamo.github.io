@@ -65,7 +65,7 @@ img {
   max-width: 100%;
   height: auto;
 }
-.button {
+button {
   background-color: #f44336; /* Red */
   border: none;
   color: white;
