@@ -95,27 +95,32 @@
         <figure id="Location5"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
     </section>
 
+     <h2>
+        Week 3 Charts
+    </h2>
+     
     <section>
         <div class="chart-description">
-            <h3>Ukraine Grain Imports by Year</h3>
+            <h3>UK Worker Productivity</h3>
             <p> 
-                 Mahound is in his paradise above the evening star,
-                (Don John of Austria is going to the war.)
-                He moves a mighty turban on the timeless houri’s knees,
-                His turban that is woven of the sunset and the seas.
-                He shakes the peacock gardens as he rises from his ease,
-                And he strides among the tree-tops and is taller than the trees,
-                And his voice through all the garden is a thunder sent to bring
-                Black Azrael and Ariel and Ammon on the wing.
-                Giants and the Genii,
-                Multiplex of wing and eye,
-                Whose strong obedience broke the sky
-                When Solomon was king.              
+                 I went to the Legacies of Empire talk, and frankly it didn't discuss much economics. I've done my best to create charts on inequality and productivity.              
             </p>
         </div>
         <figure id="Location6"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
     </section>
-    
+    <section>
+        <div class="chart-description">
+            <h3>UK Ethnicity Pay Gaps</h3>
+        </div>
+        <figure id="Location9"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+     <p>
+          This demonstrates some of the systemic inequalities Britons face despite the ever increasing productivity.
+     </p>
+
+     <h2>
+          Week 4 Charts
+     </h2>
     <section>
         <div class="chart-description">
             <h3>LCOE of Land-Based Wind</h3>
@@ -146,6 +151,20 @@
         <figure id="Location8"></figure> 
     </section>
 
+<h2>
+     Week 5 Charts
+</h2>
+
+     <a href="https://colab.research.google.com/drive/1s5y2nig0ywo9E30FqfqHBZcXHV9HBf4v#scrollTo=ElIBdfQ6zDkj">Google Colab Workbook</a>     <section>
+          <div class="chart-description">
+               <h3> 2023 NBA Field Goal Conversion Percentage </h3>
+               <p>
+                    I chose this site because I like sports stats, plain and simple.
+               </p>
+               <figure id="Location10"></figure>
+     </section>
+
+     
     <!-- This is a script, it's a way to run JavaScript code on the page -->
     <script>
         // This is a comment in JavaScript - it's a different language to HTML and CSS
@@ -218,7 +237,16 @@
         vegaEmbed('#Location8', figure_8_spec) 
 
     </script>
-    
+     
+    <script>
+        let figure_9_spec = "Wk3Inequality.json";
+         vegaEmbed('#Location9', figure_9_spec)
+    </script>
+
+     <script>
+          let figure_10_spec = "Week 5 Chart.json";
+         vegaEmbed('#Location10', figure_10_spec)
+     </script>
 </body>
     
 </body>
