@@ -6,7 +6,8 @@
 
 body { /* We can style any HTML element by using its name - here we're styling the body */
   /* We want text that uses a clean sans-serif font, is usually 16px big and close to black */
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  @media (prefers-color-scheme: light) {
+  font-family: 'open sans', Roboto, Helvetica, sans-serif;
   font-size: 16px;
   color: teal;
   line-height: 1.6;
@@ -18,7 +19,19 @@ body { /* We can style any HTML element by using its name - here we're styling t
   text-align: center
 }
 
-
+   @media (prefers-color-scheme: dark) {
+  font-family: Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  color: teal;
+  line-height: 1.6;
+  /* we want a white page, that's centered and not too wide */
+  background-color:  #333;
+  margin:0 auto;
+  max-width: 800px;
+  padding-top: 60px;
+  text-align: center
+}
+}
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
   color: teal;
@@ -83,3 +96,4 @@ button:hover {
   background-color: orange; /* Green */
   color: white;
 }
+
