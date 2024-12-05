@@ -26,7 +26,8 @@
         "param": "hover",
         "field":"Scenario",
         "type":"nominal",
-        "legend": null
+        "sort": ["Advanced", "Moderate", "Conservative"],
+          "scale": {"range": ["darkgreen", "teal", "darkblue"]}
       },
       "value": "grey"
     },
