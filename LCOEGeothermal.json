@@ -20,13 +20,14 @@
     "encoding": {
       "x": {"field": "Year", "type": "temporal", "title": null},
       "y": {"field": "Value", "type": "quantitative", "title": null},
-      "color": {
-        "scale": {"range": ["darkgreen", "teal", "darkblue"]},
+      "color": { 
+
         "condition": {
           "param": "hover",
           "field": "Scenario",
           "type": "nominal",
-          "legend": null
+          "sort": ["Advanced", "Moderate", "Conservative"],
+          "scale": {"range": ["darkgreen", "teal", "darkblue"]}
         },
         "value": "grey"
       },
@@ -68,14 +69,14 @@
         ]
       }
     ],
-    "config": {
-      "legend": {
+
+  },
+  "config": {
+    "legend": {
         "fillColor": "#ffffff",
         "strokeColor": "black",
         "padding": 5,
         "symbolType": "stroke"
       }
-    }
-  },
-  "config": {}
+  }
 }
