@@ -15,7 +15,7 @@
   "width": 300,
   "background": "#d2ffd2",
   "encoding": {
-    "x": {"field": "Year", "type": "temporal", "title": null},
+    "x": {"field": "Year", "type": "nominal", "title": null},
     "y": {"field": "Value", "type": "quantitative", "title": null},
     "color": {
       "condition": {
@@ -30,7 +30,11 @@
     },
     "opacity": {"condition": {"param": "hover", "value": 1}, "value": 0.2}
   },
-   "params": [
+   "transform": [
+    {"filter": "datum.Year>minYear"},
+    {"filter": "datum.Year<maxYear"}
+  ],
+  "params": [
     {
       "name": "minYear",
       "value": 2020,
