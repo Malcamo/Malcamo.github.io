@@ -1,0 +1,91 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Projected Cost of Utility-Level Photovoltaic Power",
+    "subtitle": [
+      "LCOE of Utility-Level Solar Power, $/MWh",
+      "Source: NREL Annual Technology Baseline 2024"
+    ],
+    "color": "purple"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/Malcamo/Malcamo.github.io/refs/heads/main/Utility_PV_LCOE_cleaned.csv"
+  },
+  "view": {"fill": "white", "strokeOpacity": 0},
+  "width": 300,
+  "background": "#d2ffd2",
+  "encoding": {
+    "x": {"field": "Year", "type": "nominal", "title": null},
+    "y": {"field": "Value", "type": "quantitative", "title": null},
+    "color": {
+      "scale": {"range": ["darkgreen", "teal", "darkblue"]},
+      "condition": {
+        "param": "hover",
+        "field": "Scenario",
+        "type": "nominal",
+        "legend": null
+      },
+      "value": "grey"
+    },
+    "opacity": {"condition": {"param": "hover", "value": 1}, "value": 0.2}
+  },
+  "transform": [
+    {"filter": "datum.Year>minYear"},
+    {"filter": "datum.Year<maxYear"}
+  ],
+  "params": [
+    {
+      "name": "minYear",
+      "value": 2022,
+      "bind": {"input": "text", "name": "Start year:"}
+    },
+    {
+      "name": "maxYear",
+      "value": 2050,
+      "bind": {"input": "text", "name": "End year:"}
+    }
+  ],
+  "layer": [
+    {
+      "params": [
+        {
+          "name": "hover",
+          "value": [{"Scenario": "Advanced"}],
+          "select": {
+            "type": "point",
+            "fields": ["Scenario"],
+            "on": "pointerover"
+          }
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "strokeWidth": 8,
+        "stroke": "transparent",
+        "point": true
+      }
+    },
+    {"mark": "line"},
+    {
+      "encoding": {
+        "x": {"aggregate": "max", "field": "Year"},
+        "y": {"aggregate": {"argmax": "Value"}, "field": "price"}
+      },
+      "layer": [
+        {"mark": {"type": "circle"}},
+        {
+          "mark": {"type": "text", "align": "left", "dx": 4},
+          "encoding": {"text": {"field": "Scenario", "type": "nominal"}}
+        }
+      ]
+    }
+  ],
+  "config": {
+    "legend": {
+      "fillColor": "#ffffff",
+      "strokeColor": "black",
+      "padding": 5,
+      "symbolType": "stroke"
+    }
+  }
+}
