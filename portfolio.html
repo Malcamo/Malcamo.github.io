@@ -175,11 +175,18 @@
      <div class="chart-description">
           <h3> Levelised Cost of Solar Power</h3>
           <p>
-               This is one interactive element I'm experimenting with for my final project
+               This is one interactive element I'm experimenting with for my final project; using a date selector to narrow or widen the field of investigation.
+          </p>
+          <figure id="Location11"></figure>
+</section>
+<section>
+     <div class="chart-description">
+          <h3> Levelised Cost of Geothermal Power</h3>
+          <p>
+               This is another interactive element I'm experimenting with; using a dropdown menu to switch between different technologies for projecting LCOE.
           </p>
           <figure id="Location12"></figure>
 </section>
-     
        
     <!-- This is a script, it's a way to run JavaScript code on the page -->
     <script>
@@ -264,8 +271,12 @@
          vegaEmbed('#Location10', figure_10_spec)
      </script>
      <script>
-          let figure_11_spec = "WK10Visualization2.json";
-          vegaEmbed('#Location12', figure_11_spec)
+          let figure_11_spec = "WK10Visualization1.json";
+          vegaEmbed('#Location11', figure_11_spec)
+     </script>
+          <script>
+          let figure_12_spec = "WK10Visualization2.json";
+          vegaEmbed('#Location12', figure_12_spec)
      </script>
 </body>
     
