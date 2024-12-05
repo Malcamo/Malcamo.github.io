@@ -31,18 +31,47 @@
 
 <body> 
 <!-- The body tag contains the elements that visitors to our page will see. -->
-    <h1 class="big" style="margin-bottom: 0px;"> <!-- We have added a class to the header called "big" which we can use to style it in the CSS -->
-        <!-- This is a header, it is the largest text on the page -->
-        Malcolm Orrange
+    <h1 class="big" style="margin-bottom: 0px;"> 
+        Final Project Fall 2024
     </h1>
     <p style="margin-top: 0px; color: darkblue">
         <!-- we're setting the margin to 0px so the header and authour name are close together -->
-        Malcolm Orrange | <a href="https://www.linkedin.com/in/malcolm-orrange/">LinkedIn</a> | <a
+        <a href="https://malcamo.github.io/index.html">Malcolm Orrange</a> | <a href="https://www.linkedin.com/in/malcolm-orrange/">LinkedIn</a> | <a href="https://www.linkedin.com/in/malcolm-orrange/">LinkedIn</a> | <a
             href="https://www.github.com/Malcamo">GitHub</a>
     </p>
-    <h3 class="small"> <!-- We have added a class to the header called "small" which we can use to style it in the CSS -->
-        This page acts as your portfolio of charts. You can use it as a good starting point to display your work but make sure to customise it to make it your own, or even start from scratch.  
-    </h3>
+    <section>
+        <h2>
+            Aims
+        </h2>
+        <p> 
+            Climate change is possibly the greatest threat facing humanity at the current moment. 
+            As a society, anything that makes it easier to combat is incredibly useful. 
+            For that reason, I wanted to investigate the “levelised cost of energy”, or LCOE, for a variety of different renewable energy sources. 
+            LCOE is a very complicated metric, but essentially, it is a comparative statistic we can use to determine how much different energy sources cost per Megawatt-hour. 
+        </p>
+        <p>
+            I decided to look into short-run projections of LCOE over the coming decades, because sometimes it seems like our struggle against the climate crisis is becoming hopeless. 
+            I was trying to learn if renewable energy prices were going to become substantially cheaper in the short-run, because that is one of the things I think would greatly help our collective struggle. 
+            So, that’s what this project is attempting to demonstrate; whether or not the LCOE of various renewable sources is going to decrease in the next 30 years.
+
+        </p>
+        
+    </section>
+
+    <section>
+        <h2>
+            Data
+        </h2>
+        <p>
+            I found my data relatively quickly, and it was exactly what I was looking for. The National Renewable Energy Laboratory in the US puts out an Annual Technology Baseline, which includes projected LCOE data. Not only was there an Excel spreadsheet with all the data I could ever want, there were also a number of graphs that helped me visualise what my final project could look like if I were really good at coding. 
+        </p>
+        <p>
+            I utilized some Python code to extract the specific LCOE data I wanted from the ATB data. It was relatively easy to do, and the only real hurdle was creating the initial code skeleton. I had to extract data from 6 separate sheets, one for each technology. While every extraction was run off the same basic form of code, I did have to go through and manually change the values to match what I was looking to extract. Perhaps if I were more experienced, I could have fully automated it, but I’m proud of what I achieved.
+        </p>
+        <p>
+            Every graph has three lines, representing 3 projections done by the NREL. Each has a different set of assumptions about the future, with “Conservative” making the most conservative predictions. Logically, “Moderate” and “Advanced” make moderate and advanced predictions.
+        </p>
+    </section>
 
     <section>
         <a href="LCOEOnshoreWind.html"><button>Onshore Wind</button></a>
@@ -61,6 +90,32 @@
 
 
 
+    <section>
+        <h2>
+            Challenges
+        </h2>
+        <p>
+            I think there were two major challenges that I faced with this project. First and foremost, it was my first time doing any substantial coding. As such, basically everything I did was very much an uphill climb. The number of times I had to walk away from my computer before I broke something was staggering. But I genuinely believe that when I did manage to make things work, it made it feel so much better. From that point of view, basically everything was a challenge.
+        </p>
+        <p>
+            However, I believe there was one challenge that really kept me down for quite a long time. My data had many different types of technology within different renewable sources. For example, there were 10 different types of wind turbine, which when combined with the three scenarios, meant that every year had 30 data points when I tried to graph it. This plagued me from the data extraction all the way to the final project, and I ended up finding two different ways around it.
+        </p>
+        <p>
+            First off, the solution I wound up using was to just extract the technology I was interested in. Given that I had to manually set which spreadsheet rows I was using anyways, this wasn’t much work at all. Yes, it’s not the ideal solution, but it worked with the formatting I was using for my charts. The second solution I tried was using a dropdown menu to switch between technologies, but it caused issues with just about everything else I was trying to do with my charts. Again, it’s not the ideal solution, but I fought for a while trying to make it work, and it was impeding my ability to finish the project as a whole. Giving up on it was the right choice because it meant I actually have a finished product.
+        </p>
+    </section>
+
+    <section>
+        <h2>
+            Conclusions
+        </h2>
+        <p>
+            The results I found were quite inspiring. In a world beset by a climate crisis, it is reassuring to know that renewable energy will become substantially cheaper in the near future. Every chart, save for hydropower, shows a substantial projected decrease by 2050. It is important to keep in mind that these are just projections, but the data does make the future look bright.
+        </p>
+        <p>
+            If the LCOE for these renewable sources does decrease in the near-future, it will make it much more economical to use renewables. Renewables have steadily been becoming more competitive with traditional fossil fuels, and these projected decreases will make that competition even closer. Perhaps it will be the signal for our society to finally phase out fossil fuels entirely.
+        </p>
+    </section>
 
   <p>
     <a href="index.html"><button>Back</button></a>
