@@ -1,0 +1,90 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Projected Cost of Geothermal Power",
+    "subtitle": [
+      "LCOE of Geothermal Power by Technology, $/MWh",
+      "Source: NREL Annual Technology Baseline 2024"
+    ],
+    "color": "purple"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/Malcamo/Malcamo.github.io/refs/heads/main/geothermal_LCOE_cleaned.csv"
+  },
+  "view": {"fill": "white", "strokeOpacity": 0},
+  "width": 300,
+  "background": "#d2ffd2",
+  "encoding": {
+    "x": {"field": "Year", "type": "nominal", "title": null},
+    "y": {"field": "Value", "type": "quantitative", "title": null},
+    "color": {
+      "scale": {"range": ["darkgreen", "teal", "darkblue"]},
+      "condition": {
+        "param": "hover",
+        "field": "Scenario",
+        "type": "nominal",
+        "legend": null,
+        "sort": ["Advanced", "Moderate", "Conservative"],
+        "scale": {"range": ["darkgreen", "teal", "darkblue"]}
+      },
+      "value": "grey"
+    },
+    "opacity": {"condition": {"param": "hover", "value": 1}, "value": 0.2}
+  },
+  "params": [
+    {
+      "name": "SelectParam",
+      "value": "Hydro / Flash",
+      "bind": {
+        "input": "select",
+        "options": ["Hydro / Flash", "Hydro / Binary"],
+        "name": "Select Tech:"
+      }
+    }
+  ],
+  "transform": [{"filter": "datum.Technology == SelectParam"}],
+  "layer": [
+    {
+      "params": [
+        {
+          "name": "hover",
+          "value": [{"Scenario": "Advanced"}],
+          "select": {
+            "type": "point",
+            "fields": ["Scenario"],
+            "on": "pointerover"
+          }
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "strokeWidth": 8,
+        "stroke": "transparent",
+        "point": true,
+        "tooltip": true
+      }
+    },
+    {"mark": "line"},
+    {
+      "encoding": {
+        "x": {"aggregate": "max", "field": "Year"},
+        "y": {"aggregate": {"argmax": "Year"}, "field": "Value"}
+      },
+      "layer": [
+        {"mark": {"type": "circle"}},
+        {
+          "mark": {"type": "text", "align": "left", "dx": 6},
+          "encoding": {"text": {"field": "Scenario", "type": "nominal"}}
+        }
+      ]
+    }
+  ],
+  "config": {
+    "legend": {
+      "fillColor": "#ffffff",
+      "strokeColor": "black",
+      "padding": 5,
+      "symbolType": "stroke"
+    }
+  }
+}
