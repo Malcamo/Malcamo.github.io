@@ -68,15 +68,7 @@
           }
         ]
       }
-    ],
+    ]
 
-  },
-  "config": {
-    "legend": {
-        "fillColor": "#ffffff",
-        "strokeColor": "black",
-        "padding": 5,
-        "symbolType": "stroke"
-      }
   }
 }
