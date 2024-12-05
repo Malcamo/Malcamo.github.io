@@ -15,7 +15,7 @@
   "width": 300,
   "background": "#d2ffd2",
   "encoding": {
-    "x": {"field": "Year", "type": "nominal", "title": null},
+    "x": {"field": "Year", "type": "temporal", "title": null},
     "y": {"field": "Value", "type": "quantitative", "title": null},
     "color": {
       "scale": {"range": ["darkgreen", "teal", "darkblue"]},
@@ -23,30 +23,12 @@
         "param": "hover",
         "field": "Scenario",
         "type": "nominal",
-        "legend": null,
-        "sort": ["Advanced", "Moderate", "Conservative"],
-          "scale": {"range": ["darkgreen", "teal", "darkblue"]}
+        "legend": null
       },
       "value": "grey"
     },
     "opacity": {"condition": {"param": "hover", "value": 1}, "value": 0.2}
   },
-  "transform": [
-    {"filter": "datum.Year>minYear"},
-    {"filter": "datum.Year<maxYear"}
-  ],
-  "params": [
-    {
-      "name": "minYear",
-      "value": 2022,
-      "bind": {"input": "text", "name": "Start year:"}
-    },
-    {
-      "name": "maxYear",
-      "value": 2050,
-      "bind": {"input": "text", "name": "End year:"}
-    }
-  ],
   "layer": [
     {
       "params": [
@@ -64,20 +46,19 @@
         "type": "line",
         "strokeWidth": 8,
         "stroke": "transparent",
-        "point": true,
-        "tooltip":true
+        "point": true
       }
     },
     {"mark": "line"},
     {
       "encoding": {
         "x": {"aggregate": "max", "field": "Year"},
-        "y": {"aggregate": {"argmax": "Year"}, "field": "Value"}
+        "y": {"aggregate": {"argmax": "Value"}, "field": "price"}
       },
       "layer": [
         {"mark": {"type": "circle"}},
         {
-          "mark": {"type": "text", "align": "left", "dx": 6},
+          "mark": {"type": "text", "align": "left", "dx": 4},
           "encoding": {"text": {"field": "Scenario", "type": "nominal"}}
         }
       ]
