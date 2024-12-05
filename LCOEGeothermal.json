@@ -13,7 +13,7 @@
     "url": "https://raw.githubusercontent.com/Malcamo/Malcamo.github.io/refs/heads/main/geothermal_LCOE_cleaned.csv"
   },
   "background": "#d2ffd2",
-  "facet": {"column": {"field": "Technology"}},
+  "facet": {"column": {"field": "Technology", "title":null}},
   "spec": {
     "view": {"fill": "white", "strokeOpacity": 0},
     "width": 300,
