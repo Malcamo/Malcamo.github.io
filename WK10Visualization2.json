@@ -23,7 +23,9 @@
         "param": "hover",
         "field": "Scenario",
         "type": "nominal",
-        "legend": null
+        "legend": null,
+        "sort": ["Advanced", "Moderate", "Conservative"],
+          "scale": {"range": ["darkgreen", "teal", "darkblue"]}
       },
       "value": "grey"
     },
@@ -62,19 +64,20 @@
         "type": "line",
         "strokeWidth": 8,
         "stroke": "transparent",
-        "point": true
+        "point": true,
+        "tooltip":true
       }
     },
     {"mark": "line"},
     {
       "encoding": {
         "x": {"aggregate": "max", "field": "Year"},
-        "y": {"aggregate": {"argmax": "Value"}, "field": "price"}
+        "y": {"aggregate": {"argmax": "Year"}, "field": "Value"}
       },
       "layer": [
         {"mark": {"type": "circle"}},
         {
-          "mark": {"type": "text", "align": "left", "dx": 4},
+          "mark": {"type": "text", "align": "left", "dx": 6},
           "encoding": {"text": {"field": "Scenario", "type": "nominal"}}
         }
       ]
