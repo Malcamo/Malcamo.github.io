@@ -9,7 +9,7 @@ body { /* We can style any HTML element by using its name - here we're styling t
   @media (prefers-color-scheme: light) {
   font-family: 'open sans', Roboto, Helvetica, sans-serif;
   font-size: 16px;
-  color: #0bbdbd;
+  color: #333;
   line-height: 1.6;
   /* we want a white page, that's centered and not too wide */
   background-color:  #EFEFEF;
@@ -22,7 +22,7 @@ body { /* We can style any HTML element by using its name - here we're styling t
   @media (prefers-color-scheme: dark) {
   font-family: Roboto, Helvetica, sans-serif;
   font-size: 16px;
-  color: #0bbdbd;
+  color: #EFEFEF;
   line-height: 1.6;
   /* we want a white page, that's centered and not too wide */
   background-color:  #333;
