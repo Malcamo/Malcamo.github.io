@@ -13,7 +13,7 @@
     "url": "https://raw.githubusercontent.com/Malcamo/Malcamo.github.io/refs/heads/main/Nuclear_LCOE_Cleaned.csv"
   },
   "background": "#d2ffd2",
-  "facet":{"column": {"field":"Cleaned Reactor Size"}},
+  "facet":{"column": {"field":"Cleaned Reactor Size", "title":null}},
   "spec": {"view": {"fill": "white", "strokeOpacity": 0},
   "width": 300,
   
