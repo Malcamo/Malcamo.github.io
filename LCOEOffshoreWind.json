@@ -76,7 +76,7 @@
       "layer": [
         {"mark": {"type": "circle"}},
         {
-          "mark": {"type": "text", "align": "left", "dx": 4},
+          "mark": {"type": "text", "align": "left", "dx": 6},
           "encoding": {"text": {"field": "Scenario", "type": "nominal"}}
         }
       ]
