@@ -9,7 +9,7 @@ body { /* We can style any HTML element by using its name - here we're styling t
   @media (prefers-color-scheme: light) {
   font-family: 'open sans', Roboto, Helvetica, sans-serif;
   font-size: 16px;
-  color: teal;
+  color: #0bbdbd;
   line-height: 1.6;
   /* we want a white page, that's centered and not too wide */
   background-color:  #EFEFEF;
@@ -22,7 +22,7 @@ body { /* We can style any HTML element by using its name - here we're styling t
   @media (prefers-color-scheme: dark) {
   font-family: Roboto, Helvetica, sans-serif;
   font-size: 16px;
-  color: teal;
+  color: #0bbdbd;
   line-height: 1.6;
   /* we want a white page, that's centered and not too wide */
   background-color:  #333;
@@ -34,7 +34,7 @@ body { /* We can style any HTML element by using its name - here we're styling t
 }
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  color: teal;
+  color: #0bbdbd;
   margin-top: 24px;
   margin-bottom: 16px;
   font-weight: 600;
