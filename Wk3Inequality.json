@@ -20,7 +20,7 @@
       {"Ethnicity": "Mixed or Multiple ethnic groups: White and Asian", "PayGap": 17.4},
       {"Ethnicity": "Asian or Asian British: Indian", "PayGap": 19.9},
       {"Ethnicity": "Asian or Asian British: Chinese", "PayGap": 23.0},
-      {"Ethnicity": "White: Irish", "PayGap": 40.1},
+      {"Ethnicity": "White: Irish", "PayGap": 40.1}
     ]
   },
   "encoding": {
