@@ -7,6 +7,9 @@
     "format": {"type": "topojson", "feature": "counties"}
   },
   "projection": {"type": "albersUsa"},
-  "mark": "geoshape",
-  "config": {}
+
+  "mark": {
+      "type": "geoshape",
+  },
+  "encoding": {"tooltip":{"field":"properties.name"}}
 }
