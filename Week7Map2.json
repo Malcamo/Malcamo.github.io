@@ -20,17 +20,23 @@
         "url": "https://raw.githubusercontent.com/Malcamo/Malcamo.github.io/refs/heads/main/uscounties.csv"
       },
       "key": "id",
-      "fields": ["population"]
+      "fields": ["population","state_name"]
     }
   }],
   "projection": {
     "type": "albersUsa"
   },
   "mark": {
-    "tooltip":true,
+    "tooltip": true,
     "type": "geoshape"
   },
   "encoding": {
+    "tooltip":[
+      {"field": "state_name", "title": "State"},
+      {"field":"properties.name", "title": "County"},
+      {"field": "population", "title": "Population"}
+      
+    ],
     "color": {
       "field": "population",
       "type": "quantitative"
