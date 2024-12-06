@@ -9,7 +9,7 @@
   "projection": {"type": "albersUsa"},
 
   "mark": {
-      "type": "geoshape",
+      "type": "geoshape"
   },
   "encoding": {"tooltip":{"field":"properties.name", "title": "County"}}
 }
