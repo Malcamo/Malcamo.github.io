@@ -1,29 +1,39 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
+  "title":{
     "text": "US Population by County",
     "subtitle": "Data Courtesy of https://simplemaps.com/data/us-counties"
-  },
+},
   "width": 500,
   "height": 300,
   "data": {
     "url": "https://raw.githubusercontent.com/Malcamo/Malcamo.github.io/refs/heads/main/counties-10m.json",
-    "format": {"type": "topojson", "feature": "counties"}
-  },
-  "transform": [
-    {
-      "lookup": "id",
-      "from": {
-        "data": {
-          "url": "https://raw.githubusercontent.com/Malcamo/Malcamo.github.io/refs/heads/main/uscounties.csv"
-        },
-        "key": "id",
-        "fields": ["population"]
-      }
+    "format": {
+      "type": "topojson",
+      "feature": "counties"
     }
-  ],
-  "projection": {"type": "albersUsa"},
-  "mark": "geoshape",
-  "encoding": {"color": {"field": "population", "type": "quantitative"}},
-  "config": {}
+  },
+  "transform": [{
+    "lookup": "id",
+    "from": {
+      "data": {
+        "url": "https://raw.githubusercontent.com/Malcamo/Malcamo.github.io/refs/heads/main/uscounties.csv"
+      },
+      "key": "id",
+      "fields": ["population"]
+    }
+  }],
+  "projection": {
+    "type": "albersUsa"
+  },
+  "mark": {
+    "tooltip":true,
+    "type": "geoshape"
+  },
+  "encoding": {
+    "color": {
+      "field": "population",
+      "type": "quantitative"
+    }
+  }
 }
