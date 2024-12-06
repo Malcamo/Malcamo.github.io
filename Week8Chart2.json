@@ -1,0 +1,57 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Count of Mothers' Height at Birth",
+    "subtitle": [
+      "US Territories Birth Data",
+      "Source: National Center for Health Statistics (2018)"
+    ]
+  },
+  "data": {
+    "values": [
+      {"bin_start": 36, "bin_end": 37, "count": 1},
+      {"bin_start": 48, "bin_end": 49, "count": 16},
+      {"bin_start": 49, "bin_end": 50, "count": 28},
+      {"bin_start": 50, "bin_end": 51, "count": 5},
+      {"bin_start": 51, "bin_end": 52, "count": 3},
+      {"bin_start": 52, "bin_end": 53, "count": 7},
+      {"bin_start": 53, "bin_end": 54, "count": 17},
+      {"bin_start": 54, "bin_end": 55, "count": 10},
+      {"bin_start": 55, "bin_end": 56, "count": 17},
+      {"bin_start": 56, "bin_end": 57, "count": 71},
+      {"bin_start": 57, "bin_end": 58, "count": 178},
+      {"bin_start": 58, "bin_end": 59, "count": 231},
+      {"bin_start": 59, "bin_end": 60, "count": 1024},
+      {"bin_start": 60, "bin_end": 61, "count": 2075},
+      {"bin_start": 61, "bin_end": 62, "count": 2787},
+      {"bin_start": 62, "bin_end": 63, "count": 4720},
+      {"bin_start": 63, "bin_end": 64, "count": 3832},
+      {"bin_start": 64, "bin_end": 65, "count": 3587},
+      {"bin_start": 65, "bin_end": 66, "count": 2486},
+      {"bin_start": 66, "bin_end": 67, "count": 2066},
+      {"bin_start": 67, "bin_end": 68, "count": 1256},
+      {"bin_start": 68, "bin_end": 69, "count": 612},
+      {"bin_start": 69, "bin_end": 70, "count": 399},
+      {"bin_start": 70, "bin_end": 71, "count": 138},
+      {"bin_start": 71, "bin_end": 72, "count": 102},
+      {"bin_start": 72, "bin_end": 73, "count": 35},
+      {"bin_start": 73, "bin_end": 74, "count": 10},
+      {"bin_start": 74, "bin_end": 75, "count": 7},
+      {"bin_start": 75, "bin_end": 76, "count": 2},
+      {"bin_start": 76, "bin_end": 77, "count": 2},
+      {"bin_start": 77, "bin_end": 78, "count": 4},
+      {"bin_start": 78, "bin_end": 79, "count": 6}
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "bin_start",
+      "bin": {"binned": true, "step": 2},
+      "title": "Mother's Height (in)"
+    },
+    "x2": {"field": "bin_end"},
+    "y": {"field": "count", "type": "quantitative", "title": null}
+  },
+  "config": {}
+}

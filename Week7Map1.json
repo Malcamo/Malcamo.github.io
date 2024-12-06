@@ -1,0 +1,12 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500,
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/Malcamo/Malcamo.github.io/refs/heads/main/counties-10m.json",
+    "format": {"type": "topojson", "feature": "counties"}
+  },
+  "projection": {"type": "albersUsa"},
+  "mark": "geoshape",
+  "config": {}
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Malcamo/Malcamo.github.io/refs/heads/main/shark_attacks.csv"
+  },
+  "title": {
+    "text": "Correlation Does Not Equal Causation",
+    "subtitle": "Higher Temperatures Clearly Cause Shark Attacks",
+    "color": "#007ba7"
+  },
+  "layer": [
+    {
+      "mark": {"type": "point", "filled": true},
+      "encoding": {
+        "x": {"field": "SharkAttacks", "type": "quantitative"},
+        "y": {"field": "Temperature", "type": "quantitative"}
+      }
+    },
+    {
+      "mark": {"type": "line", "color": "firebrick"},
+      "transform": [{"regression": "Temperature", "on": "SharkAttacks"}],
+      "encoding": {
+        "x": {"field": "SharkAttacks", "type": "quantitative"},
+        "y": {"field": "Temperature", "type": "quantitative"}
+      }
+    },
+    {
+      "transform": [
+        {"regression": "Temperature", "on": "SharkAttacks", "params": true},
+        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+      ],
+      "mark": {
+        "type": "text",
+        "color": "firebrick",
+        "x": "width",
+        "align": "right",
+        "y": -5
+      },
+      "encoding": {"text": {"type": "nominal", "field": "R2"}}
+    }
+  ],
+  "config": {}
+}
