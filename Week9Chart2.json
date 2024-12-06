@@ -1,0 +1,45 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Malcamo/Malcamo.github.io/refs/heads/main/bread_prices_by_region.csv"
+  },
+  "title": {
+    "text": "The Price of a Loaf of Bread",
+    "subtitle": [
+      "The median price of 'LARGE LOAF-WHITE-SLICED-800G'",
+      "Data: ONS",
+      ""
+    ]
+  },
+  "params": [
+    {
+      "name": "SelectParam",
+      "value": "UKC",
+      "bind": {
+        "input": "select",
+        "options": [
+          "UKC",
+          "UKD",
+          "UKE",
+          "UKF",
+          "UKG",
+          "UKH",
+          "UKI",
+          "UKJ",
+          "UKK",
+          "UKL",
+          "UKM",
+          "UKN"
+        ],
+        "name": "Select Tech:"
+      }
+    }
+  ],
+  "transform": [{"filter": "datum.id == SelectParam"}],
+  "mark": {"type": "line", "color": "blue"},
+  "encoding": {
+    "x": {"field": "year", "type": "temporal"},
+    "y": {"field": "price", "type": "quantitative"}
+  },
+  "config": {}
+}
