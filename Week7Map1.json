@@ -11,5 +11,5 @@
   "mark": {
       "type": "geoshape",
   },
-  "encoding": {"tooltip":{"field":"properties.name"}}
+  "encoding": {"tooltip":{"field":"properties.name", "title": "County"}}
 }
